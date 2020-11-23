@@ -4,8 +4,8 @@
 
 using namespace std;
 
-int prevv[101], nextt[101],head;
-string key[101];
+static int prevv[101], nextt[101],head;
+ string key[101];
 
 void dodawanie(string x)
 {
@@ -37,10 +37,10 @@ void dodawanie(string x)
 			{
 				prevv[g] = i;
 			}
-			if (g == 0)
-			{
-				prevv[g] = 0;
-			}
+//			if (g == 0)
+//			{
+//				prevv[g] = 0;
+//			}
 			if (headx != 0)
 			{
 				nextt[headx] = i;
@@ -70,12 +70,8 @@ void wyswietlanieaz()
 
 void wyswietlanieza()
 {
-	int i = 1;
-	while (nextt[i] != NULL && i != 0)
-	{
-		i = nextt[i];
-	}
-	while (i != NULL && i != 0)
+	int i = head;
+		while (i != NULL && i != 0)
 	{
 		cout << key[i] << endl;
 		i = prevv[i];
